@@ -3,10 +3,12 @@ const colorPicker = document.getElementById("colorPicker");
 const height = document.getElementById("inputheight");
 const width = document.getElementById("inputwidth");
 const form = document.getElementById("sizePicker");
-form.addEventListener('submit' function(e) {
-pixelCanvas.innerHTML = '' ;
-e.preventDefault();
-makeGrid();
+sizePicker.addEventListener("submit", function(evt) {
+    let tbl = document.getElementById("pixelCanvas");
+	while (tbl.tBodies[0].hasChildNodes()) {
+		tbl.tBodies[0].removeChild(tbl.tBodies[0].lastChild);
+    }
+    makeGrid(height.value, width.value);
 });
 pixelCanvas.addEventListener('click',function(e) {
 if (e.target.nodeName === 'TD') {
