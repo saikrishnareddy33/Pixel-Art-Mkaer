@@ -1,12 +1,12 @@
 fuction makeGrid()
-const cancas = document.getElementById("pixelCanvas");
-const gc = document.getElementById("colorPicker");
-const gh = document.getElementById("inputheight");
-const gw = document.getElementById("inputwidth");
+const canvas = document.getElementById("pixelCanvas");
+const color = document.getElementById("colorPicker");
+const height = document.getElementById("inputheight");
+const width = document.getElementById("inputwidth");
 html = '',
-for (var i=o; i<gh; i++) {
+for (var i=o; i<height.value; i++) {
 html+=<'tr'>;
-for (var j=0; j<gw; j++) {
+for (var j=0; j<width.value; j++) {
 html+="<td onclick = 'this.style.background'></td>;
 }
 html+=</tr>
@@ -15,6 +15,6 @@ table.innerhtml = html;
 return false;
 }
 function setColor() {
-const gc = document.getElementById("colorPicker").value;
-return gc;
+const color = document.getElementById("colorPicker").value;
+return color;
 }
