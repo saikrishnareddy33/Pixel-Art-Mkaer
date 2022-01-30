@@ -1,25 +1,20 @@
-const canvas = document.getElementById("pixelCanvas");
-const colorPicker = document.getElementById("colorPicker");
-const height = document.getElementById("inputheight");
-const width = document.getElementById("inputwidth");
-const form = document.getElementById("sizePicker");
-sizePicker.addEventListener("submit", function(evt) {
-    let tbl = document.getElementById("pixelCanvas");
-	while (tbl.tBodies[0].hasChildNodes()) {
-		tbl.tBodies[0].removeChild(tbl.tBodies[0].lastChild);
-    }
-    makeGrid(height.value, width.value);
-});
-pixelCanvas.addEventListener('click',function(e) {
-if (e.target.nodeName === 'TD') {
-e.target.style.backgroundColor = colorPicker.value;
+fuction makeGrid()
+const cancas = document.getElementById("pixelCanvas");
+const gc = document.getElementById("colorPicker");
+const gh = document.getElementById("inputheight");
+const gw = document.getElementById("inputwidth");
+html = '',
+for (var i=o; i<gh; i++) {
+html+=<'tr'>;
+for (var j=0; j<gw; j++) {
+html+="<td onclick = 'this.style.background'></td>;
 }
-});
-funtion makeGrid(height,width) {
-for (let i=0; i<height.value; i++) {
-const row = canavasinsertRow(0);
-for (let j=0; j<width.value; j++) {
-row.insertcell(0);
+html+=</tr>
 }
+table.innerhtml = html;
+return false;
 }
+function setColor() {
+const gc = document.getElementById("colorPicker").value;
+return gc;
 }
